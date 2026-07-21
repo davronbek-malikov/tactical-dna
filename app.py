@@ -39,7 +39,7 @@ def load_artifacts():
     pca = joblib.load(MODEL_DIR / "pca.joblib")
     with open(MODEL_DIR / "cluster_labels.json") as f:
         label_map = {int(k): v for k, v in json.load(f).items()}
-    df = pd.read_csv(DATA_PATH)
+    df = pd.read_csv(DATA_PATH, dtype={"season": str})
     X = scaler.transform(df[FEATS].values)
     return scaler, model, pca, label_map, df, X
 
