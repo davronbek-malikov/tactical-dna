@@ -1,15 +1,3 @@
----
-title: Soccer Player Archetype Explorer
-emoji: ⚽
-colorFrom: green
-colorTo: blue
-sdk: streamlit
-sdk_version: 1.35.0
-app_file: app.py
-pinned: false
-license: mit
----
-
 # ⚽ Soccer Player Archetype Explorer — Unsupervised ML
 
 Player-style clustering over 6,300+ qualified player-seasons from Europe's top
@@ -20,7 +8,7 @@ into one of them and find their closest statistical twins.
 
 **Companion project to [Soccer Salary Predictor](https://github.com/davronbek-malikov/soccer-xG-salary_prediction)** — same dataset family, this time solving an unsupervised problem (clustering) instead of supervised regression, using the same understat-derived Big-5-league data.
 
-🔗 **Live demo:** Hugging Face Space (link in repo description)
+🔗 **Live demo:** https://soccer-player-archetypes.onrender.com
 🔗 **Salary Predictor (sister project):** https://soccer-xg-salary-prediction.onrender.com
 
 ---
@@ -180,7 +168,7 @@ streamlit run app.py
 ## Stack
 
 Python · scikit-learn (KMeans, Agglomerative, DBSCAN, Gaussian Mixture, PCA)
-· pandas/numpy · Plotly · Streamlit · Hugging Face Spaces
+· pandas/numpy · Plotly · Streamlit · Render · UptimeRobot
 
 ---
 
