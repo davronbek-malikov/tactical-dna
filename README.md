@@ -1,14 +1,21 @@
-# ⚽ Soccer Player Archetype Explorer — Unsupervised ML
+# 🧬 TacticalDNA — Unsupervised Player-Archetype Discovery
 
-Player-style clustering over 6,300+ qualified player-seasons from Europe's top
-5 leagues (Bundesliga, La Liga, Serie A · 2014/15–2021/22). No labels, no
-target — the model discovers playing archetypes from performance data alone,
-then a Streamlit app lets you classify any player (real or hypothetical)
-into one of them and find their closest statistical twins.
+TacticalDNA reads a player the way genetics reads a genome — no coach's
+opinion, no scouting report, no salary figure. Feed it 6,300+ player-seasons
+from Europe's top 5 leagues (Bundesliga, La Liga, Serie A · 2014/15–2021/22)
+and it discovers six distinct playing identities entirely on its own, purely
+from what happened on the pitch — then a Streamlit app lets you classify any
+player, real or hypothetical, and find their closest statistical twins.
+
+> **The interesting part:** during testing, a completely made-up stat line —
+> "25 goals, 15 assists, 2,500 minutes," no name attached — landed the model
+> in the *Elite Complete Forward* cluster, matched to prime **Messi's 2019/20
+> season at 98% cosine similarity**. Nobody told the model who Messi is. It
+> found that identity purely from the shape of the numbers.
 
 **Companion project to [Soccer Salary Predictor](https://github.com/davronbek-malikov/soccer-xG-salary_prediction)** — same dataset family, this time solving an unsupervised problem (clustering) instead of supervised regression, using the same understat-derived Big-5-league data.
 
-🔗 **Live demo:** https://soccer-player-archetypes.onrender.com
+🔗 **Live demo:** https://soccer-player-clustering.onrender.com
 🔗 **Salary Predictor (sister project):** https://soccer-xg-salary-prediction.onrender.com
 
 ---
@@ -141,8 +148,8 @@ Two modes:
 ## Project structure
 
 ```
-soccer-player-clustering/
-├── app.py                       # Streamlit demo (entry point for HF Spaces)
+tactical-dna/
+├── app.py                       # Streamlit demo (entry point for Render)
 ├── run_pipeline.py              # end-to-end: load → engineer → bake-off → fit → save
 ├── src/
 │   ├── data_loader.py           # raw multi-league season loader

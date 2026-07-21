@@ -1,5 +1,5 @@
 """
-Soccer Player Archetype Explorer — Streamlit demo.
+TacticalDNA — Streamlit demo.
 
 Two modes:
   1. Pick a real player-season from the Big-5-league dataset (2014/15-2021/22)
@@ -27,7 +27,7 @@ FEATS = FeatureEngineer.CLUSTER_FEATURES
 MODEL_DIR = Path("models")
 DATA_PATH = Path("data/processed/players_clustered.csv")
 
-st.set_page_config(page_title="Soccer Player Archetype Explorer", page_icon="⚽", layout="wide")
+st.set_page_config(page_title="TacticalDNA", page_icon="🧬", layout="wide")
 
 
 @st.cache_resource
@@ -93,11 +93,16 @@ def pca_map(highlight_xy=None, highlight_name="Your player"):
     return fig
 
 
-st.title("⚽ Soccer Player Archetype Explorer")
+st.title("🧬 TacticalDNA")
 st.caption(
     "Unsupervised clustering (KMeans, k=6) over 6,314 qualified player-seasons "
     "(≥900 minutes) from Bundesliga, La Liga & Serie A, 2014/15–2021/22 — "
-    "same dataset family as the Salary Predictor project, this time with no target label."
+    "no coach, no scout, no salary figure. Just performance data finding six playing identities on its own."
+)
+st.info(
+    "🔎 **Try this:** enter 25 goals, 15 assists, 2,500 minutes in the *custom player* tab — no name attached. "
+    "It lands in **Elite Complete Forward**, matched to prime Messi's 2019/20 season at **98% similarity**.",
+    icon="🧬",
 )
 
 tab1, tab2 = st.tabs(["🔍 Explore a real player", "🧪 Try a custom player"])
